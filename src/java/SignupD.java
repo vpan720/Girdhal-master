@@ -44,8 +44,8 @@ public class SignupD extends HttpServlet {
         String e=request.getParameter("mail");
         String a=request.getParameter("age");
         String p=request.getParameter("pass");
-        
-        
+        String m=request.getParameter("num");
+        String add=request.getParameter("add");
         Class.forName(dbDriver); 
         
          try (Connection con = DriverManager.getConnection(dbURL + dbName, 
@@ -55,7 +55,7 @@ public class SignupD extends HttpServlet {
                  
                  //out.println("<b>Successfully Registered.</b>");
                     PreparedStatement st = con
-                            .prepareStatement("insert into newuser values(?,?,?,?,?)")) {
+                            .prepareStatement("insert into newuser values(?,?,?,?,?,?,?)")) {
                
                
                 
@@ -66,14 +66,16 @@ public class SignupD extends HttpServlet {
                 st.setString(3, e);
                 st.setString(4,a);
                 st.setString(5, p);
-// Execute the insert command using executeUpdate()
+                st.setString(6, m);
+                 st.setString(7, add);
+                // Execute the insert command using executeUpdate()
                 // to make changes in database
                 int i=st.executeUpdate();  
 if(i>0)  
             
            
          
-            request.getRequestDispatcher("signin.html").include(request, response);
+            request.getRequestDispatcher("Signin.jsp").include(request, response);
         } }
         catch (Exception e) { 
         } 
