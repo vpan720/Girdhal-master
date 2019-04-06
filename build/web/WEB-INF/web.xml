@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.1" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd">
+    <servlet>
+        <servlet-name>val</servlet-name>
+        <servlet-class>val</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>lo</servlet-name>
+        <servlet-class>lo</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SignupD</servlet-name>
+        <servlet-class>SignupD</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>feedbackD</servlet-name>
+        <servlet-class>feedbackD</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>val</servlet-name>
+        <url-pattern>/val</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>lo</servlet-name>
+        <url-pattern>/lo</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SignupD</servlet-name>
+        <url-pattern>/SignupD</url-pattern>
+    </servlet-mapping>
+    <welcome-file-list>
+        <welcome-file>register.html</welcome-file>
+    </welcome-file-list>
+    <servlet-mapping>
+        <servlet-name>feedbackD</servlet-name>
+        <url-pattern>/feedbackD</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            1
+        </session-timeout>
+    </session-config>
+</web-app>
