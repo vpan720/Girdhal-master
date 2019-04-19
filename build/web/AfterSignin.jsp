@@ -1,19 +1,7 @@
-<%-- 
-    Document   : AfterSignin
-    Created on : Mar 26, 2019, 9:10:34 AM
-    Author     : Suraj
---%>
 
-<%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-        
 <html>
 <head>
-    <title> Girdhal Food Products</title>
+    <title>Girdhal Food Products</title>
    
 <link rel="icon" href="L.jpg">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -262,24 +250,11 @@ float: left;
   <a href="index.html"> <img src="L.jpg" height=7% width=9%></a>
 </div>
 <div class="topnav" id="myTopnav">
-  <a href="index.html">Home</a>
- <div class="dropdown">
-    <button class="dropbtn">Chips
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Backed</a>
-      <a href="#">Fried</a>
-      <a href="#">Crispy</a>
-    </div>
-     
- </div>
-
- 
-  <a href="contact.jsp">Contact</a>
-  <a href="#about">About</a>
-<a href="feedback.jsp">Feedback</a>
-<a href="index.html">Sign Out</a>
+  <a href="AfterSignin.jsp">Home</a>
+  <a href="product.jsp">Chips</a>
+  <a href="cart.jsp">Cart</a>
+ <a href="feedback.jsp">Feedback</a>
+<a href="index.html">Logout</a>
 </div>
     
 <div class="slideshow-container">
@@ -357,7 +332,5 @@ function showSlides(n) {
 
 
 
-
-
-   
+</body>
 </html>

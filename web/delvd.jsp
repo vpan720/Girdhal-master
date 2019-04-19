@@ -1,6 +1,6 @@
 <%-- 
-    Document   : deletedb
-    Created on : Apr 4, 2019, 10:24:49 PM
+    Document   : delvd
+    Created on : Apr 18, 2019, 1:37:05 PM
     Author     : VIKAS
 --%>
 <%@page import="java.io.*,java.util.*,java.sql.*" %>
@@ -17,22 +17,11 @@
         <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/girdhal"
                            user="root" password="vikas"/>
-        
         <sql:update dataSource="${dbsource}">
-            insert into pendingorders select cart2.mail,cart2.product_name,cart2.qty,cart2.totalprice from cart2
-        </sql:update>
-        <sql:update dataSource="${dbsource}">
-            delete from cart
-        </sql:update>
-            <sql:update dataSource="${dbsource}">
-            delete from cart2
-        </sql:update>
-            <sql:update dataSource="${dbsource}">
-            delete from price
-        </sql:update>
-        
-            <font size="5" color="green">Congratulations! Order Placed Successfully.</font>
-            <br><h3><a href="AfterSignin.jsp">Go Home</a></h3>
+            insert into delivered select pendingorders.user,pendingorders.products,pendingorders.quantities,pendingorders.amount from pendingorders
+            where user='${param.user}'
+        </sql:update> 
+            <c:redirect url="AfterASignin.jsp"/>
         
     </body>
 </html>

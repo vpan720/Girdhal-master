@@ -1,14 +1,139 @@
+<%-- 
+    Document   : dlvrddsply
+    Created on : Apr 18, 2019, 8:09:49 PM
+    Author     : VIKAS
+--%>
+<%@page import="java.io.*,java.util.*,java.sql.*" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-<head><title>Admin Login Page</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Delivered Orders</title>
+        <link rel="icon" href="L2.png">
+          <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-</head>
-<style>
+  <style>
+      .product{
+         height: 10px;
+         width:10px;
+          
+      }
+      .form-group{
+   margin-bottom: 0; 
+}
+.ex1 {
+  padding-top: 100px;
+}
+
+
+
+body {margin:0;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #ffff99;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.navbar a {
+  float: left;
+  display: block;
+  color: #ffff99;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ffff99;
+  color: #ffff99;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+
+
+
+.box-sizing: border-box{
+    
+}
+
+/* Full-width input fields */
+  input[type=text], input[type=password] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  display: inline-block;
+  border: none;
+  background: #f1f1f1;
+}
+
+input[type=text]:focus, input[type=password]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+hr {
+  border: 1px solid #f1f1f1;
+  margin-bottom: 25px;
+}
+
+/* Set a style for all buttons */
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  opacity: 0.9;
+}
+
+button:hover {
+  opacity:1;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  padding: 14px 20px;
+  background-color: #f44336;
+}
+
+/* Float cancel and signup buttons and add an equal width */
+.cancelbtn, .signupbtn {
+  float: left;
+  width: 50%;
+}
+
+/* Add padding to container elements */
+.container {
+  padding: 16px;
+}
+
+/* Clear floats */
+.clearfix::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* Change styles for cancel button and signup button on extra small screens */
+@media screen and (max-width: 300px) {
+  .cancelbtn, .signupbtn {
+    width: 50%;
+  }
+}
 body {margin:0;}
 
 .navbar {
@@ -316,113 +441,89 @@ float: left;
   padding: 20px;
   text-align: center;
 }
-
-.ac{
+.dc{
     color:black;
 }
+.jumbotron{
+    margin-top: 0;
+   margin-bottom: 0;
+}
+.well-lg{
+     margin-top: 0;
+    margin-bottom: 0;
+}
 
-</style>
-
-<body>
-
-
-    
-
-<div class="logo">
+.form-group{
+   margin-bottom: 0; 
+}
+.bg-text{
+     margin-bottom: 0; 
+}
+#rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+img {
+  border-radius: 50%;
+}
+  </style>
+    </head>
+    <body>
+        
+        <div class="logo">
 
   <a href="index.html"> <img src="L.jpg" height=7% width=9%></a>
 </div>
 <div class="topnav" id="myTopnav">
-  <a href="index.html">Home</a>
- <div class="dropdown">
-    <button class="dropbtn">Chips
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Backed</a>
-      <a href="#">Fried</a>
-      <a href="#">Crispy</a>
-    </div>
-     
- </div>
-
- <div class="dropdown">
- <button class="dropbtn">Login
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="signin.html">Sign in</a>
-      <a href="signup.html">Sign Up</a>
-      <a href="Alogin.html">Admin Login</a>
-    </div>
-  </div>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-<a href="#feedback">Feedback</a>
+  <a href="AfterASignin.jsp">Orders</a>
+  <a href="userdetails.jsp">User Details</a>
+  <a href="index.html">Logout</a>
 </div>
-    <div class="bg-image">
-        <img src="3.jpg" height="100%" width="100%">
-    </div>
-    <div class="bg-text">
-    
-       
-        <form action="val" method="post" align="center">
-            
-                             <div class="jumbotron" width="100%" height="30%">
-                                 <div class="well well-lg">
-                                    
-    <div class="form-group">
-  
-        <label class="control-label col-sm-4" for="email"> <div class="ac">Enter Your Name:</div></label>
-      <div class="col-xs-4">
-           <input class="form-control" id="ex1" type="text" placeholder="Enter Name" name="name" required>
-          
-          
-      </div>
-      <br><br>
-                                        
-      <label class="control-label col-sm-4" for="email" color="black"><div class="ac">Enter Your Password:</div></label>
-       <div class="col-xs-4">
-           <input class="form-control" id="ex1" type="password" placeholder="Enter Password" name="pass" required>
-          
-          
-       </div>
-        <br><br>
-        
-        <input type="submit" value='Login' class="btn btn-warning">
-    </div>
-            </div>
-        
-                             </div></form></div>
-
-<script>
-var slideIndex = 1;
-showSlides(slideIndex);
-
-function plusSlides(n) {
-  showSlides(slideIndex += n);
+        <script>
+            function confirmGo(m,u)
+            {
+                if(confirm(m))
+                {
+                    window.location=u;
+                }
+            }
+         </script>
+    </head>
+    <body>
+        <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
+                           url="jdbc:mysql://localhost:3306/girdhal"
+                           user="root" password="vikas"/>
+        <sql:query dataSource="${dbsource}" var="result">
+            select * from delivered;
+        </sql:query>
+            <style>
+th, td {
+  padding: 5px;
+  text-align: center;
 }
-
-function currentSlide(n) {
-  showSlides(slideIndex = n);
-}
-
-function showSlides(n) {
-  var i;
-  var slides = document.getElementsByClassName("mySlides");
-  var dots = document.getElementsByClassName("dot");
-  if (n > slides.length) {slideIndex = 1;}    
-  if (n < 1) {slideIndex = slides.length;}
-  for (i = 0; i < slides.length; i++) {
-      slides[i].style.display = "none";  
-  }
-  for (i = 0; i < dots.length; i++) {
-      dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";  
-  dots[slideIndex-1].className += " active";
-}
-</script>
-
-</body>
+</style>
+    <center>
+        <form>
+            <br><table border="1" width="40%">
+                <caption>Delivered Orders</caption>
+                <tr>
+                    <th>User</th>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Amount</th>
+                </tr>
+                <c:forEach var="row" items="${result.rows}">
+                    <tr>
+                        <td><c:out value="${row.user}"/></td>
+                        <td><c:out value="${row.products}"/></td>
+                        <td><c:out value="${row.quantities}"/></td>
+                        <td><c:out value="${row.amount}"/></td></tr>
+                </c:forEach>
+            </table>
+    </form>
+    </center>   
+    </body>
 </html>

@@ -39,7 +39,7 @@ public class feedbackD extends HttpServlet {
         // Database name to access 
         String dbName = "girdhal"; 
         String dbUsername = "root"; 
-        String dbPassword = ""; 
+        String dbPassword = "vikas"; 
         String n=request.getParameter("name");
         String e=request.getParameter("mail");
         String f=request.getParameter("feedback");
@@ -71,7 +71,7 @@ if(i>0)
             
            
          
-            request.getRequestDispatcher("index.html").include(request, response);
+            request.getRequestDispatcher("AfterSignin.jsp").include(request, response);
         } }
         catch (Exception e) { 
         } 

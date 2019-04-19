@@ -451,32 +451,11 @@ float: left;
   <a href="index.html"> <img src="L.jpg" height=7% width=9%></a>
 </div>
 <div class="topnav" id="myTopnav">
-  <a href="index.html">Home</a>
- <div class="dropdown">
-    <button class="dropbtn">Chips
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Backed</a>
-      <a href="#">Fried</a>
-      <a href="#">Crispy</a>
-    </div>
-     
- </div>
-
- <div class="dropdown">
- <button class="dropbtn">Login
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="signin.html">Sign in</a>
-      <a href="signup.html">Sign Up</a>
-      <a href="Alogin.html">Admin Login</a>
-    </div>
-  </div>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-<a href="#feedback">Feedback</a>
+  <a href="AfterSignin.jsp">Home</a>
+  <a href="product.jsp">Chips</a>
+  <a href="cart.jsp">Cart</a>
+  <a href="index.html">Logout</a>
+  
 </div>
 
         
@@ -500,17 +479,16 @@ float: left;
         <label class="control-label col-sm-4" for="email"><div class="dc">Enter Your Name:</div></label>
       <div class="col-sm-8">
           <input type="text" class="form-control"  placeholder="Enter Name" name="name" required>
-          
-          
       </div>
       <label class="control-label col-sm-4" for="email"> <div class="dc">Email:</div> </label>
          <div class="col-sm-8">
-         <input type="email" class="form-control"  placeholder="Enter email" name="mail">
+             <input type="email" class="form-control"  placeholder="Enter email" name="mail" required>
          </div>
         
-       <label class="control-label col-sm-4" for="email"> <div class="dc">Feedback:</div> </label>
+       <label class="control-label col-sm-4" for="email"> <div class="dc">Feedback (Max 200 Characters):</div> </label>
          <div class="col-sm-8">
-             <input type="text" class="form-control"  placeholder="Enter Your Feedback" name="feedback">
+             <input type="text" maxlength="200" class="form-control"  placeholder="Enter Your Feedback" name="feedback" required>
+             
          </div>
                    
             

@@ -609,9 +609,14 @@ public final class buynow_jsp extends org.apache.jasper.runtime.HttpJspBase
         return;
       out.write("\n");
       out.write("            </table>\n");
-      out.write("                <br><br><br>\n");
-      out.write("                <input type=\"submit\" value=\"proceed\"/>\n");
+      out.write("                <br><br><font color=\"red\"><b>Enter Email To Proceed:\n");
+      out.write("                    <input type=\"email\" class=\"form-control\"  placeholder=\"Enter email\" name=\"mail\" required>\n");
+      out.write("         \n");
+      out.write("         <input type=\"submit\" value=\"PROCEED\"/></b></font>\n");
+      out.write("       \n");
       out.write("        </form>\n");
+      out.write("             \n");
+      out.write("         \n");
       out.write("    </center>\n");
       out.write("    </body>\n");
       out.write("</html>\n");

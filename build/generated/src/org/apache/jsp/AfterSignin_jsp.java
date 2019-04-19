@@ -30,7 +30,7 @@ public final class AfterSignin_jsp extends org.apache.jasper.runtime.HttpJspBase
     PageContext _jspx_page_context = null;
 
     try {
-      response.setContentType("text/html;charset=UTF-8");
+      response.setContentType("text/html");
       pageContext = _jspxFactory.getPageContext(this, request, response,
       			null, true, 8192, true);
       _jspx_page_context = pageContext;
@@ -42,13 +42,8 @@ public final class AfterSignin_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
-      out.write("    <head>\n");
-      out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        \n");
+      out.write("<head>\n");
       out.write("    <title> Girdhal Food Products</title>\n");
       out.write("   \n");
       out.write("<link rel=\"icon\" href=\"L.jpg\">\n");
@@ -298,24 +293,12 @@ public final class AfterSignin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("  <a href=\"index.html\"> <img src=\"L.jpg\" height=7% width=9%></a>\n");
       out.write("</div>\n");
       out.write("<div class=\"topnav\" id=\"myTopnav\">\n");
-      out.write("  <a href=\"index.html\">Home</a>\n");
-      out.write(" <div class=\"dropdown\">\n");
-      out.write("    <button class=\"dropbtn\">Chips\n");
-      out.write("      <i class=\"fa fa-caret-down\"></i>\n");
-      out.write("    </button>\n");
-      out.write("    <div class=\"dropdown-content\">\n");
-      out.write("      <a href=\"#\">Backed</a>\n");
-      out.write("      <a href=\"#\">Fried</a>\n");
-      out.write("      <a href=\"#\">Crispy</a>\n");
-      out.write("    </div>\n");
-      out.write("     \n");
-      out.write(" </div>\n");
-      out.write("\n");
-      out.write(" \n");
+      out.write("  <a href=\"AfterSignin.jsp\">Home</a>\n");
+      out.write("  <a href=\"product.jsp\">Chips</a>\n");
       out.write("  <a href=\"contact.jsp\">Contact</a>\n");
       out.write("  <a href=\"#about\">About</a>\n");
       out.write("<a href=\"feedback.jsp\">Feedback</a>\n");
-      out.write("<a href=\"index.html\">Sign Out</a>\n");
+      out.write("<a href=\"index.html\">Logout</a>\n");
       out.write("</div>\n");
       out.write("    \n");
       out.write("<div class=\"slideshow-container\">\n");
@@ -393,9 +376,7 @@ public final class AfterSignin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
-      out.write("   \n");
+      out.write("</body>\n");
       out.write("</html>\n");
     } catch (Throwable t) {
       if (!(t instanceof SkipPageException)){

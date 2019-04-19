@@ -9,7 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Products</title>
+        <title>Chips</title>
         <link rel="icon" href="L2.png">
           <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -476,29 +476,8 @@ img {
   <a href="index.html"> <img src="L.jpg" height=7% width=9%></a>
 </div>
 <div class="topnav" id="myTopnav">
-  <a href="index.html">Home</a>
- <div class="dropdown">
-    <button class="dropbtn">Chips
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Backed</a>
-      <a href="#">Fried</a>
-      <a href="#">Crispy</a>
-    </div>
-     
- </div>
-
- <div class="dropdown">
- <button class="dropbtn">Login
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="signin.html">Sign in</a>
-      <a href="signup.html">Sign Up</a>
-      <a href="Alogin.html">Admin Login</a>
-    </div>
-  </div>
+  <a href="AfterSignin.jsp">Home</a>
+ <a href="cart.jsp">Cart</a>
   <a href="contact.jsp">Contact</a>
   <a href="#about">About</a>
 <a href="feedback.jsp">Feedback</a>
@@ -510,11 +489,12 @@ th, td {
   padding: 15px;
 }
 </style>
+<center>
             <table>
                 <tr>
                     <td align="center">
                         <img src="3.jpg" align="left" height="300px" width="400px" class="img-rounded"><br>
-                        <br><input type="checkbox" name="c1" value="chp1"/>CHECK TO SELECT PRODUCT<br>
+                        <br><input formaction="deletedb.jsp" type="checkbox" name="c1" value="chp1"/>CHECK TO SELECT PRODUCT<br>
                         Enter Quantity in KGs(>10)<input type="text" name="qty"/>
                         <input formaction="productAction.jsp" type="submit" value="Add To Cart"/>
                         <input formaction="directbuy.jsp" type="submit" value="Buy Now"/>
@@ -530,8 +510,8 @@ th, td {
         </c:if>
                     </td>
                 </tr>
-            </table>  
-<center><b><a href="cart.jsp">CART</a></b></center>
+            </table>
+        </center>
         </div>
         </form>
     </body>

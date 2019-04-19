@@ -11,14 +11,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title></title>
     </head>
     <body>
         <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/girdhal"
                            user="root" password="vikas"/>
+        
         <sql:update dataSource="${dbsource}">
-            insert into pendingorders select cart2.product_name,cart2.qty,cart2.totalprice from cart2
+            insert into pendingorders select cart2.mail,cart2.product_name,cart2.qty,cart2.totalprice from cart2
         </sql:update>
         <sql:update dataSource="${dbsource}">
             delete from cart

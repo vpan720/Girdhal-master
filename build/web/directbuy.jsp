@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <title>GFP</title>
         <link rel="icon" href="L2.png">
           <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -479,31 +479,10 @@ img {
 </div>
 <div class="topnav" id="myTopnav">
   <a href="index.html">Home</a>
- <div class="dropdown">
-    <button class="dropbtn">Chips
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Backed</a>
-      <a href="#">Fried</a>
-      <a href="#">Crispy</a>
-    </div>
-     
- </div>
-
- <div class="dropdown">
- <button class="dropbtn">Login
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="signin.html">Sign in</a>
-      <a href="signup.html">Sign Up</a>
-      <a href="Alogin.html">Admin Login</a>
-    </div>
-  </div>
-  <a href="contact.jsp">Contact</a>
-  <a href="#about">About</a>
+ <a href="product.jsp">Chips</a>
+  <a href="cart.jsp">Cart</a>
 <a href="feedback.jsp">Feedback</a>
+<a href="index.html">Logout</a>
 </div>
     </head>
     <body>
@@ -527,7 +506,7 @@ img {
         </sql:update>
             <c:if test="${result>=1}">
                 <sql:update dataSource="${dbsource}">
-                    insert into cart2 SELECT product.product_name, cart.qty, product.price_prkg, (cart.qty*product.price_prkg),cart.id from product inner join cart on product.id=cart.id;
+                    insert into cart2 SELECT product.product_name, cart.qty, product.price_prkg, (cart.qty*product.price_prkg),cart.id, cart.mail from product inner join cart on product.id=cart.id;
                 </sql:update>
             </c:if>
                     <sql:query dataSource="${dbsource}" var="result">
@@ -564,8 +543,10 @@ img {
                     </tr>
                 </c:forEach>
             </table>
-                <br><br><br>
-                <input type="submit" value="proceed"/>
+                <br><br><font color="red"><b>Enter Email To Proceed:
+         <input type="email" class="form-control"  placeholder="Enter email" name="mail">
+         
+         <input type="submit" value="PROCEED"/></b></font>
                 </form>
     </center>
     </body>

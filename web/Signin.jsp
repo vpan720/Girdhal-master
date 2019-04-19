@@ -9,8 +9,8 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
-    </head>
+        <title>Login</title>
+        <link rel="icon" href="L2.png">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
@@ -336,31 +336,8 @@ float: left;
 </div>
 <div class="topnav" id="myTopnav">
   <a href="index.html">Home</a>
- <div class="dropdown">
-    <button class="dropbtn">Chips
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Backed</a>
-      <a href="#">Fried</a>
-      <a href="#">Crispy</a>
-    </div>
-     
- </div>
-
- <div class="dropdown">
- <button class="dropbtn">Login
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="signin.html">Sign in</a>
-      <a href="signup.html">Sign Up</a>
-      <a href="Alogin.html">Admin Login</a>
-    </div>
-  </div>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
-<a href="#feedback">Feedback</a>
+  <a href="signup.html">Sign Up</a>
+  <a href="Alogin.jsp">Admin Login</a>
 </div>
         
     
@@ -372,16 +349,16 @@ float: left;
     <div class="bg-text">
     
   
-        <form action="cloginAuthenticate.jsp" method="post" align="center">
+        <form method="post" align="center">
 
                              <div class="jumbotron" width="100%">
                                  <div class="well well-lg">
                                      <form class="form-horizontal" action="/action_page.php">
     <div class="form-group">
   
-        <label class="control-label col-sm-4" for="email"><div class="dc">Enter Your Name:</div></label>
+        <label class="control-label col-sm-4" for="email"><div class="dc">Enter Your Email:</div></label>
       <div class="col-xs-4">
-           <input class="form-control" id="ex1" type="text" placeholder="Enter Username" name="mail" required>
+           <input class="form-control" id="ex1" type="text" placeholder="Enter Email" name="mail" required>
           
           
       </div>
@@ -391,11 +368,13 @@ float: left;
        <div class="col-xs-4">
            <input class="form-control" id="ex1" type="password" placeholder="Enter Password" name="pass" required>
           
-          
+          <font color="red"><c:if test="${not empty param.errMsg}">
+            <c:out value="${param.errMsg}"/>
+        </c:if></font>
        </div>
         <br><br>
         
-        <input type="submit" value='Login' class="btn btn-warning">
+        <input  formaction="cloginAuthenticate.jsp" type="submit" value='Login' class="btn btn-warning">
     </div>
                                          
             
@@ -409,9 +388,7 @@ float: left;
     
 
 
-</div> <font color="red"><c:if test="${not empty param.errMsg}">
-            <c:out value="${param.errMsg}"/>
-        </c:if></font>
+</div> 
 </body>
 </html>
    

@@ -32,14 +32,16 @@
         <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/girdhal"
                            user="root" password="vikas"/>
+     
         <sql:update dataSource="${dbsource}" var="result">
-            insert into cart(id,qty) values(?,?);
+            insert into cart(id,qty,mail) values(?,?,?);
             <sql:param value="${param.c1}"/>
             <sql:param value="${param.qty}"/>
+            <sql:param value="${param.mail}"/>
         </sql:update>
             <c:if test="${result>=1}">
                 <sql:update dataSource="${dbsource}">
-                    insert into cart2 SELECT product.product_name, cart.qty, product.price_prkg, (cart.qty*product.price_prkg), cart.id from product inner join cart on product.id=cart.id;
+                    insert into cart2 SELECT product.product_name, cart.qty, product.price_prkg, (cart.qty*product.price_prkg), cart.id, cart.mail from product inner join cart on product.id=cart.id;
                 </sql:update>
                 <c:redirect url="product.jsp"/>
             </c:if>

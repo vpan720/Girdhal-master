@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <title>GFP</title>
         <link rel="icon" href="L2.png">
           <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -478,32 +478,11 @@ img {
   <a href="index.html"> <img src="L.jpg" height=7% width=9%></a>
 </div>
 <div class="topnav" id="myTopnav">
-  <a href="index.html">Home</a>
- <div class="dropdown">
-    <button class="dropbtn">Chips
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Backed</a>
-      <a href="#">Fried</a>
-      <a href="#">Crispy</a>
-    </div>
-     
- </div>
-
- <div class="dropdown">
- <button class="dropbtn">Login
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="signin.html">Sign in</a>
-      <a href="signup.html">Sign Up</a>
-      <a href="Alogin.html">Admin Login</a>
-    </div>
-  </div>
-  <a href="contact.jsp">Contact</a>
-  <a href="#about">About</a>
+  <a href="AfterSignin.jsp">Home</a>
+ <a href="product.jsp">Chips</a>
+ <a href="cart.jsp">Cart</a> 
 <a href="feedback.jsp">Feedback</a>
+<a href="index.html">Logout</a>
 </div>
         <script>
             function confirmGo(m,u)
@@ -516,26 +495,38 @@ img {
          </script>
     </head>
     <body>
-        <form>
-            <center>
-                <table border="0">
+       
+        <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
+                           url="jdbc:mysql://localhost:3306/girdhal"
+                           user="root" password="vikas"/>
+        <sql:query dataSource="${dbsource}" var="result">
+            select * from newuser where mail='${param.mail}'
+        </sql:query>
+            <sql:update dataSource="${dbsource}">
+           update cart2 set mail=? where id='chp1';
+           <sql:param value="${param.mail}"/>
+            </sql:update>
+        <center>
+            <form>
+            <c:forEach var="row" items="${result.rows}">
+                <table border="0"><caption>User Details</caption>
                     <tr>
-                        <td>Enter Email:</td>
-                        <td><input type="text" name="username"></td>
+                        <td>Email:</td>
+                        <td><c:out value="${row.mail}"/></td>
                     </tr>
                     <tr>
-                        <td>Enter Mobile:</td>
-                        <td><input type="text" name="mobile"></td>
+                        <td>Mobile:</td>
+                        <td><c:out value="${row.num}"/></td>
                     </tr>
                     <tr>
-                        <td>Enter Address:</td>
-                        <td><input type="textbox" name="address"></td>
+                        <td>Address:</td>
+                        <td><c:out value="${row.addr}"/></td>
                     </tr>
                     <tr>
-                        <td colspan="2"><a href="javascript:confirmGo('Confirm','deletedb.jsp')">Confirm Order</a></td>
+                        <td colspan="2"><a href="javascript:confirmGo('Confirm','deletedb.jsp?id=<c:out value="${row.mail}"/>')">Confirm Order</a></td>
                     </tr>
-                </table>
-            </center>
-        </form>
+                </table></c:forEach>
+            
+        </form></center>
     </body>
 </html>

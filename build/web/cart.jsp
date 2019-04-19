@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title></title>
+        <title>Cart</title>
         <link rel="icon" href="L2.png">
           <link rel="stylesheet" href="main.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
@@ -478,32 +478,10 @@ img {
   <a href="index.html"> <img src="L.jpg" height=7% width=9%></a>
 </div>
 <div class="topnav" id="myTopnav">
-  <a href="index.html">Home</a>
- <div class="dropdown">
-    <button class="dropbtn">Chips
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Backed</a>
-      <a href="#">Fried</a>
-      <a href="#">Crispy</a>
-    </div>
-     
- </div>
-
- <div class="dropdown">
- <button class="dropbtn">Login
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="signin.html">Sign in</a>
-      <a href="signup.html">Sign Up</a>
-      <a href="Alogin.html">Admin Login</a>
-    </div>
-  </div>
-  <a href="contact.jsp">Contact</a>
-  <a href="#about">About</a>
+  <a href="AfterSignin.jsp">Home</a>
+  <a href="product.jsp">Chips</a>
 <a href="feedback.jsp">Feedback</a>
+<a href="index.html">Logout</a>
 </div>
         <script>
             function confirmGo(m,u)
@@ -524,7 +502,7 @@ img {
         </sql:query>
     <center>
         <form>
-            <br><table id="t1" border="1" width="40%">
+            <br><table border="1" width="40%">
                 <caption>Content List</caption>
                 <tr>
                     <th>Product ID</th>
@@ -545,10 +523,11 @@ img {
                     </tr>
                 </c:forEach>
             </table>
-        </form>
-    </center>   
-    <form action="buynow.jsp" method="post">
-        <input type="submit" value="Proceed to Buy"/>
+        </form><br><br>
+        <form action="buynow.jsp" method="post">
+            <b><input type="submit" value="PROCEED"/></b>
     </form>
+    </center>   
+    
     </body>
 </html>

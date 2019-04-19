@@ -1,17 +1,100 @@
+<%-- 
+    Document   : Alogin
+    Created on : Apr 18, 2019, 12:21:38 PM
+    Author     : VIKAS
+--%>
 
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
 <html>
-<head>
-<title>Girdhal Food Products</title>
-
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<link rel="stylesheet" href="style.css" type="text/css"/>
-
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Admin Login</title>
+        <link rel="icon" href="L2.png">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
 <style>
+   
+
+
+
+.bg-image {
+  /* The image used */
+  
+  
+  /* Add the blur effect */
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  
+  /* Full height */
+  width: 100%;
+  
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Position text in the middle of the page/image */
+.bg-text {
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+  color: white;
+  font-weight: bold;
+  border: 3px solid #f1f1f1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  width: 90%;
+  padding: 20px;
+  text-align: center;
+}
+body {margin:0;}
+
+.navbar {
+  overflow: hidden;
+  background-color: #ffff99;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.navbar a {
+  float: left;
+  display: block;
+  color: #ffff99;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.navbar a:hover {
+  background: #ffff99;
+  color: #ffff99;
+}
+
+.main {
+  padding: 16px;
+  margin-top: 30px;
+  height: 1500px; /* Used in this example to enable scrolling */
+}
+.p
+{
+    margin-top: 300px;
+}
+.container
+{
+    padding:16px;
+}
 * {box-sizing: border-box}
 body {font-family: Verdana, sans-serif; margin:0}
 .mySlides {display: none}
-img {vertical-align: middle;
-}
+img {vertical-align: middle;}
 
 /* Slideshow container */
 .slideshow-container {
@@ -131,6 +214,7 @@ float: left;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+
 }
 
 .topnav a:hover {
@@ -240,85 +324,71 @@ float: left;
   margin-left: 75px;
   font-size: 30px;
 }
-.bg-image {
-  /* The image used */
-  
-  
-  /* Add the blur effect */
-  filter: blur(8px);
-  -webkit-filter: blur(8px);
-  
-  /* Full height */
-  width: 100%;
-  
-  /* Center and scale the image nicely */
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+.dc{
+    color:black;
 }
-
-/* Position text in the middle of the page/image */
-.bg-text {
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
-  color: white;
-  font-weight: bold;
-  border: 3px solid #f1f1f1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 2;
-  width: 90%;
-  padding: 20px;
-  text-align: center;
-}
-
 
 </style>
-</head>
-<body>
-<div class="logo">
+    <body>
+       <div class="logo">
 
-  <a href="#logo"> <img src="L.jpg" height=7% width=9%></a>
+  <a href="index.html"> <img src="L.jpg" height=7% width=9%></a>
 </div>
 <div class="topnav" id="myTopnav">
   <a href="index.html">Home</a>
- <div class="dropdown">
-    <button class="dropbtn">Manage orders
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Pending Orders</a>
-      <a href="#">Delivered Orders</a>
-     
-    </div></div>
-     <div class="dropdown">
-   <button class="dropbtn">Manage Items
-      <i class="fa fa-caret-down"></i>
-    </button>
-    <div class="dropdown-content">
-      <a href="#">Add Items</a>
-      <a href="#">Delete Items</a>
-    </div>
-     </div>
-<a href="Alogin.html">Logout</a>	
-  
+  <a href="signup.html">Sign Up</a>
+  <a href="Signin.jsp">Customer Login</a>
   
 </div>
+        
+    
+    
+
     <div class="bg-image">
         <img src="3.jpg" height="100%" width="100%">
     </div>
-
-
-
-
+    <div class="bg-text">
+    
   
+        <form method="post" align="center">
+
+                             <div class="jumbotron" width="100%">
+                                 <div class="well well-lg">
+                                     <form class="form-horizontal" action="/action_page.php">
+    <div class="form-group">
+  
+        <label class="control-label col-sm-4" for="email"><div class="dc">Enter Your Name:</div></label>
+      <div class="col-xs-4">
+           <input class="form-control" id="ex1" type="text" placeholder="Enter Name" name="name" required>
+          
+          
+      </div>
+      <br><br>
+                                        
+      <label class="control-label col-sm-4" for="email" ><div class="dc">Enter Your Password:</div></label>
+       <div class="col-xs-4">
+           <input class="form-control" id="ex1" type="password" placeholder="Enter Password" name="pass" required>
+          
+          <font color="red"><c:if test="${not empty param.errMsg}">
+            <c:out value="${param.errMsg}"/>
+        </c:if></font>
+       </div>
+        <br><br>
+        
+        <input  formaction="Aloginauth.jsp" type="submit" value='Login' class="btn btn-warning">
+    </div>
+                                         
+            
+        
+                                 </div>          
+        </c:if>  </form></div>
+        
+    
+        
+       
+    
 
 
-
-
-
-
+</div> 
 </body>
 </html>
