@@ -56,12 +56,11 @@ public final class product_jsp extends org.apache.jasper.runtime.HttpJspBase
 
       out.write("\r\n");
       out.write("\r\n");
-      out.write("\r\n");
       out.write("<!DOCTYPE html>\r\n");
       out.write("<html>\r\n");
       out.write("    <head>\r\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\r\n");
-      out.write("        <title>Products</title>\r\n");
+      out.write("        <title>Chips</title>\r\n");
       out.write("        <link rel=\"icon\" href=\"L2.png\">\r\n");
       out.write("          <link rel=\"stylesheet\" href=\"main.css\">\r\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\r\n");

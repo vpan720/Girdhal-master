@@ -1,17 +1,32 @@
+<%@page import="java.io.*,java.util.*,java.sql.*" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Sign Up</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Customer Feedbacks</title>
         <link rel="icon" href="L2.png">
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-          
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+          <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    </head>
-    <style>
+  <style>
+      .product{
+         height: 10px;
+         width:10px;
+          
+      }
+      .form-group{
+   margin-bottom: 0; 
+}
+.ex1 {
+  padding-top: 100px;
+}
+
+
+
 body {margin:0;}
 
 .navbar {
@@ -397,7 +412,7 @@ float: left;
   -webkit-filter: blur(8px);
   
   /* Full height */
-  height: 100%;
+  width: 100%;
   
   /* Center and scale the image nicely */
   background-position: center;
@@ -425,9 +440,11 @@ float: left;
     color:black;
 }
 .jumbotron{
+    margin-top: 0;
    margin-bottom: 0;
 }
 .well-lg{
+     margin-top: 0;
     margin-bottom: 0;
 }
 
@@ -437,74 +454,60 @@ float: left;
 .bg-text{
      margin-bottom: 0; 
 }
-</style>
-
+#rcorners2 {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px; 
+  width: 200px;
+  height: 150px;  
+}
+img {
+  border-radius: 50%;
+}
+  </style>
+    </head>
     <body>
-   <div class="logo">
+        
+        <div class="logo">
 
   <a href="index.html"> <img src="L.jpg" height=7% width=9%></a>
-  
 </div>
-
-        
-    <div class="bg-image">
-        <img src="3.jpg"  width="100%">
-    </div>
-    <div class="bg-text">
-   
-    
-     
-        
-        <form action="SignupD" method="post" align="center">
-           
-                
-                    
-                      
-                             <div class="jumbotron" width="100%">
-                                 <div class="well well-lg">
-                                    
-    <div class="form-group">
-        <label class="control-label col-sm-4" for="email"><div class="dc">Enter Your Name:</div></label>
-      <div class="col-sm-8">
-           <input type="text" class="form-control"  placeholder="Enter Name" name="name">
-          
-          
-      </div>
-                                         
-    
-        <label class="control-label col-sm-4" for="email"> <div class="dc">Enter Your Surname:</div> </label>
-      <div class="col-sm-8">
-          <input type="text" class="form-control"  placeholder="Enter Surname" name="surname">
-            </div>
-         
-   
-      <label class="control-label col-sm-4" for="email"> <div class="dc">Email:</div> </label>
-         <div class="col-sm-8">
-         <input type="email" class="form-control"  placeholder="Enter email" name="mail">
-         </div>
-        
-         <label class="control-label col-sm-4" for="email"><div class="dc"> Enter Your Age: </div></label>
-         <div class="col-sm-8">
-              <input type='text'class="form-control"  name='age' placeholder="Enter Age" required></div>
-                   
-              <label class="control-label col-sm-4" for="email"><div class="dc">Enter Your Password:</div> </label>
-         <div class="col-sm-8">                      
-              <input type='password'class="form-control" name='pass' placeholder="Enter Password" required></div>
-                     
-              <label class="control-label col-sm-4" for="email"><div class="dc">Mobile number:</div> </label>
-         <div class="col-sm-8">                         
-             <input type='text'class="form-control"  name='num'  placeholder="Enter Mobile Number" required><br></div>
-             
-             
-              <label class="control-label col-sm-4" for="email"><div class="dc">Address:</div> </label>
-         <div class="col-sm-8">                         
-             <input type='text'class="form-control"  name='add'  placeholder="Enter Address" required><br></div>
-             
-                                
-         <input type="submit" value='Register' class="btn btn-warning"></div></div>
-                             
-                             </div> </form> </div>   
-
-        
-        </body>
+<div class="topnav" id="myTopnav">
+  <a href="AfterASignin.jsp">Orders</a>
+  <a href="userdetails.jsp">User Details</a>
+  <a href="index.html">Logout</a>
+</div></head>
+    <body>
+        <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
+                           url="jdbc:mysql://localhost:3306/girdhal"
+                           user="root" password="vikas"/>
+        <sql:query dataSource="${dbsource}" var="result">
+            select * from feed;
+        </sql:query>
+            <style>
+th, td {
+  padding: 5px;
+  text-align: center;
+}
+            </style><br>
+    <center>
+        <form>
+            <br><table border="1" width="40%">
+                <caption>Customer Feedbacks</caption>
+                <tr>
+                    <th>Email Address</th>
+                    <th>Name</th>
+                    <th>Message</th>
+                </tr>
+                <c:forEach var="row" items="${result.rows}">
+                    <tr>
+                        <td><c:out value="${row.mail}"/></td>
+                        <td><c:out value="${row.name}"/></td>
+                        <td><c:out value="${row.msg}"/></td>
+                    </tr>
+                </c:forEach>
+            </table>
+    </form>
+    </center>   
+    </body>
 </html>

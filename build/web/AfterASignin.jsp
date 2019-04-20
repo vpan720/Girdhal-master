@@ -1,8 +1,3 @@
-<%-- 
-    Document   : AfterASignin
-    Created on : Apr 17, 2019, 9:14:09 PM
-    Author     : VIKAS
---%>
 <%@page import="java.io.*,java.util.*,java.sql.*" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
@@ -478,8 +473,8 @@ img {
   <a href="index.html"> <img src="L.jpg" height=7% width=9%></a>
 </div>
 <div class="topnav" id="myTopnav">
-  <a href="dlvrddsply.jsp">Delivered Orders</a>
   <a href="userdetails.jsp">User Details</a>
+  <a href="fddisplay.jsp">Feedbacks</a>
   <a href="index.html">Logout</a>
 </div>
         <script>
@@ -504,27 +499,23 @@ th, td {
   padding: 5px;
   text-align: center;
 }
-</style>
+            </style><br>
     <center>
         <form method="post">
             <br><table border="1" width="40%">
-                <caption>Pending Orders</caption>
+                <caption>Orders</caption>
                 <tr>
                     <th>User</th>
                     <th>Product Name</th>
                     <th>Quantity</th>
                     <th>Amount</th>
-                    <th colspan="2">Action</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                     <tr>
                         <td><c:out value="${row.user}"/></td>
                         <td><c:out value="${row.products}"/></td>
                         <td><c:out value="${row.quantities}"/></td>
-                        <td><c:out value="${row.amount}"/></td>
-                        <td><a href="specificuser.jsp?id=<c:out value="${row.user}"/>">Get User Details</a></td>
-                        <td><a href="javascript:confirmGo('Sure to Mark this as Delivered?','delvd.jsp?id=<c:out value="${row.user}"/>')">Mark as Delivered</a></td>
-                        </tr>
+                        <td><c:out value="${row.amount}"/></td></tr>
                 </c:forEach>
             </table>
     </form>

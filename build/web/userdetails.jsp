@@ -1,8 +1,3 @@
-<%-- 
-    Document   : userdetails
-    Created on : Apr 18, 2019, 8:00:07 PM
-    Author     : VIKAS
---%>
 <%@page import="java.io.*,java.util.*,java.sql.*" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
@@ -479,19 +474,9 @@ img {
 </div>
 <div class="topnav" id="myTopnav">
   <a href="AfterASignin.jsp">Orders</a>
-  <a href="dlvrddsply.jsp">Delivered Orders</a>
+  <a href="fddisplay.jsp">Feedbacks</a>
   <a href="index.html">Logout</a>
-</div>
-        <script>
-            function confirmGo(m,u)
-            {
-                if(confirm(m))
-                {
-                    window.location=u;
-                }
-            }
-         </script>
-    </head>
+</div></head>
     <body>
         <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/girdhal"

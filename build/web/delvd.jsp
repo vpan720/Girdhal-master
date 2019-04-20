@@ -1,8 +1,3 @@
-<%-- 
-    Document   : delvd
-    Created on : Apr 18, 2019, 1:37:05 PM
-    Author     : VIKAS
---%>
 <%@page import="java.io.*,java.util.*,java.sql.*" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>

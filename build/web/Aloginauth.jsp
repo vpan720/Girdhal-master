@@ -1,8 +1,3 @@
-<%-- 
-    Document   : Aloginauth
-    Created on : Apr 17, 2019, 8:02:50 PM
-    Author     : VIKAS
---%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="s" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

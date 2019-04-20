@@ -1,8 +1,3 @@
-<%-- 
-    Document   : cloginAuthenticate
-    Created on : Mar 24, 2019, 6:49:45 PM
-    Author     : Suraj
---%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="s" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>

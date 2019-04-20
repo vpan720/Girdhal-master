@@ -1,8 +1,3 @@
-<%-- 
-    Document   : cartdelete
-    Created on : Apr 5, 2019, 11:42:58 AM
-    Author     : VIKAS
---%>
 <%@page import="java.io.*,java.util.*,java.sql.*" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>

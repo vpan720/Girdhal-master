@@ -1,8 +1,3 @@
-<%-- 
-    Document   : confirmBuy
-    Created on : Apr 4, 2019, 9:47:27 PM
-    Author     : VIKAS
---%>
 <%@page import="java.io.*,java.util.*,java.sql.*" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
@@ -506,7 +501,7 @@ img {
            update cart2 set mail=? where id='chp1';
            <sql:param value="${param.mail}"/>
             </sql:update>
-        <center>
+    <br><br><center>
             <form>
             <c:forEach var="row" items="${result.rows}">
                 <table border="0"><caption>User Details</caption>

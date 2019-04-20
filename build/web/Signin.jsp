@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Signin
-    Created on : Mar 26, 2019, 9:05:09 AM
-    Author     : Suraj
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>

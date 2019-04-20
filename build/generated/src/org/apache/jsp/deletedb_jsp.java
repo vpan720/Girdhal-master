@@ -61,18 +61,18 @@ public final class deletedb_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>JSP Page</title>\n");
+      out.write("        <title></title>\n");
       out.write("    </head>\n");
       out.write("    <body>\n");
       out.write("        ");
       if (_jspx_meth_sql_setDataSource_0(_jspx_page_context))
         return;
       out.write("\n");
+      out.write("        \n");
       out.write("        ");
       if (_jspx_meth_sql_update_0(_jspx_page_context))
         return;
@@ -89,10 +89,11 @@ public final class deletedb_jsp extends org.apache.jasper.runtime.HttpJspBase
       if (_jspx_meth_sql_update_3(_jspx_page_context))
         return;
       out.write("\n");
-      out.write("        \n");
-      out.write("            <font size=\"5\" color=\"green\">Congratulations! Order Placed Successfully.</font>\n");
-      out.write("            <br><h3><a href=\"index1.jsp\">Go Home</a></h3>\n");
-      out.write("        \n");
+      out.write("    <center>\n");
+      out.write("        <font size=\"50\" color=\"green\">Congratulations! Order Placed Successfully.</font>\n");
+      out.write("            <br><h3><a href=\"AfterSignin.jsp\">Go Home</a></h3>\n");
+      out.write("    </center>\n");
+      out.write("            \n");
       out.write("    </body>\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -151,7 +152,7 @@ public final class deletedb_jsp extends org.apache.jasper.runtime.HttpJspBase
         }
         do {
           out.write("\n");
-          out.write("            insert into pendingorders select cart2.product_name,cart2.qty,cart2.totalprice from cart2\n");
+          out.write("            insert into pendingorders select cart2.mail,cart2.product_name,cart2.qty,cart2.totalprice from cart2\n");
           out.write("        ");
           int evalDoAfterBody = _jspx_th_sql_update_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)

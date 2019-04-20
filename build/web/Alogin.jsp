@@ -1,9 +1,3 @@
-<%-- 
-    Document   : Alogin
-    Created on : Apr 18, 2019, 12:21:38 PM
-    Author     : VIKAS
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
