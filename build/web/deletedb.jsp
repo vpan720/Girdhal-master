@@ -3,12 +3,15 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
 <html>
 <head>
     <title>Girdhal Food Products</title>
    
 <link rel="icon" href="L2.png">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 <link rel="stylesheet" href="style.css" type="text/css"/>
 
 <style>
@@ -238,7 +241,10 @@ float: left;
   color: white;
 }
 
-
+.panel {
+    font-family: Verdana;
+    
+}
 
 .content {
   margin-left: 75px;
@@ -259,15 +265,34 @@ float: left;
   <a href="cart.jsp">Cart</a>
  <a href="feedback.jsp">Feedback</a>
 <a href="index.html">Logout</a>
-</div>
-    
+</div><br><div class="bg-text">
+    <div class="jumbotron" width="100%">
+                                 <div class="well well-lg">
+                                     <form class="form-horizontal">
+    <div class="form-group">
+
 
         <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/girdhal"
                            user="root" password="vikas"/>
         
         <sql:update dataSource="${dbsource}">
-            insert into pendingorders select cart2.mail,cart2.product_name,cart2.qty,cart2.totalprice from cart2
+            insert into pendingorders select cart2.mail,cart2.product_name,cart2.qty,cart2.totalprice,cart2.odrtime from cart2
+        </sql:update>
+        
+            <%
+            
+                String nowtime=""+new java.util.Date();
+            %> 
+        <sql:update dataSource="${dbsource}">
+            update pendingorders set odrtime=?
+            <sql:param value="<%=nowtime%>"/>
+        </sql:update>
+        <sql:update dataSource="${dbsource}">
+            insert into pendingorders2 select pendingorders.user,pendingorders.products,pendingorders.quantities,pendingorders.amount,pendingorders.odrtime from pendingorders;
+        </sql:update>    
+        <sql:update dataSource="${dbsource}">
+            delete from pendingorders;
         </sql:update>
         <sql:update dataSource="${dbsource}">
             delete from cart
@@ -282,8 +307,12 @@ float: left;
                 <br> <br><br><br><br><br><br>   <center>
                     <h1><font size="50" color="green">Congratulations! Order Placed Successfully.</font></h1>
     </center
-            </div>
-    
-            
+            </div></form></div>
+          </div>
+</div><div class="panel panel-warning">
+    <div class="panel-body"><center>
+            <b><font color="#ea9815">&copy; Vikas Pandey & Suraj Mishra</b>
+            </center></div>
+  </div> </div>
     </body>
 </html>

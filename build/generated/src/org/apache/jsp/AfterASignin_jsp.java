@@ -67,12 +67,11 @@ public final class AfterASignin_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Pending Orders</title>\n");
+      out.write("        <title>Girdhal Food Products</title>\n");
       out.write("        <link rel=\"icon\" href=\"L2.png\">\n");
       out.write("          <link rel=\"stylesheet\" href=\"main.css\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\n");
@@ -539,10 +538,16 @@ public final class AfterASignin_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("  <a href=\"index.html\"> <img src=\"L.jpg\" height=7% width=9%></a>\n");
       out.write("</div>\n");
       out.write("<div class=\"topnav\" id=\"myTopnav\">\n");
-      out.write("  <a href=\"dlvrddsply.jsp\">Delivered Orders</a>\n");
       out.write("  <a href=\"userdetails.jsp\">User Details</a>\n");
+      out.write("  <a href=\"fddisplay.jsp\">Feedbacks</a>\n");
       out.write("  <a href=\"index.html\">Logout</a>\n");
-      out.write("</div>\n");
+      out.write("</div><div class=\"bg-image\">\n");
+      out.write("        <img src=\"3.jpg\" height=\"100%\" width=\"100%\">\n");
+      out.write("</div><div class=\"bg-text\">\n");
+      out.write("    <div class=\"jumbotron\" width=\"100%\">\n");
+      out.write("                                 <div class=\"well well-lg\">\n");
+      out.write("                                     <form class=\"form-horizontal\" action=\"/action_page.php\">\n");
+      out.write("    <div class=\"form-group\">\n");
       out.write("        <script>\n");
       out.write("            function confirmGo(m,u)\n");
       out.write("            {\n");
@@ -567,17 +572,17 @@ public final class AfterASignin_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("  padding: 5px;\n");
       out.write("  text-align: center;\n");
       out.write("}\n");
-      out.write("</style>\n");
-      out.write("    <center>\n");
-      out.write("        <form>\n");
+      out.write("            </style><br>\n");
+      out.write("    <center><font color=\"black\">\n");
+      out.write("        <form method=\"post\">\n");
       out.write("            <br><table border=\"1\" width=\"40%\">\n");
-      out.write("                <caption>Pending Orders</caption>\n");
+      out.write("                <caption>Orders</caption>\n");
       out.write("                <tr>\n");
       out.write("                    <th>User</th>\n");
       out.write("                    <th>Product Name</th>\n");
       out.write("                    <th>Quantity</th>\n");
       out.write("                    <th>Amount</th>\n");
-      out.write("                    <th colspan=\"2\">Action</th>\n");
+      out.write("                    <th>Date and Time</th>\n");
       out.write("                </tr>\n");
       out.write("                ");
       if (_jspx_meth_c_forEach_0(_jspx_page_context))
@@ -585,7 +590,14 @@ public final class AfterASignin_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("            </table>\n");
       out.write("    </form>\n");
-      out.write("    </center>   \n");
+      out.write("    </center></div>          \n");
+      out.write("                                     </form></div>\n");
+      out.write("          </div><div class=\"panel panel-warning\">\n");
+      out.write("    <div class=\"panel-body\"><center>\n");
+      out.write("            <b><font color=\"#ea9815\">&copy; Vikas Pandey & Suraj Mishra</b>\n");
+      out.write("            </center></div>\n");
+      out.write("  </div>\n");
+      out.write("</div> </div>\n");
       out.write("    </body>\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -645,7 +657,7 @@ public final class AfterASignin_jsp extends org.apache.jasper.runtime.HttpJspBas
         }
         do {
           out.write("\n");
-          out.write("            select * from pendingorders;\n");
+          out.write("            select * from pendingorders2;\n");
           out.write("        ");
           int evalDoAfterBody = _jspx_th_sql_query_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -702,15 +714,11 @@ public final class AfterASignin_jsp extends org.apache.jasper.runtime.HttpJspBas
           if (_jspx_meth_c_out_3((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
           out.write("</td>\n");
-          out.write("                        <td><a href=\"specificuser.jsp?id=");
+          out.write("                        <td>");
           if (_jspx_meth_c_out_4((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
             return true;
-          out.write("\">Get User Details</a></td>\n");
-          out.write("                        <td><a href=\"javascript:confirmGo('Sure to Mark this as Delivered?','delvd.jsp?id=");
-          if (_jspx_meth_c_out_5((javax.servlet.jsp.tagext.JspTag) _jspx_th_c_forEach_0, _jspx_page_context, _jspx_push_body_count_c_forEach_0))
-            return true;
-          out.write("')\">Mark as Delivered</a></td>\n");
-          out.write("                        </tr>\n");
+          out.write("</td>\n");
+          out.write("                    </tr>\n");
           out.write("                ");
           int evalDoAfterBody = _jspx_th_c_forEach_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
@@ -811,31 +819,13 @@ public final class AfterASignin_jsp extends org.apache.jasper.runtime.HttpJspBas
     org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_4 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
     _jspx_th_c_out_4.setPageContext(_jspx_page_context);
     _jspx_th_c_out_4.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
-    _jspx_th_c_out_4.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.user}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
+    _jspx_th_c_out_4.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.odrtime}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
     int _jspx_eval_c_out_4 = _jspx_th_c_out_4.doStartTag();
     if (_jspx_th_c_out_4.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
       _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_4);
       return true;
     }
     _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_4);
-    return false;
-  }
-
-  private boolean _jspx_meth_c_out_5(javax.servlet.jsp.tagext.JspTag _jspx_th_c_forEach_0, PageContext _jspx_page_context, int[] _jspx_push_body_count_c_forEach_0)
-          throws Throwable {
-    PageContext pageContext = _jspx_page_context;
-    JspWriter out = _jspx_page_context.getOut();
-    //  c:out
-    org.apache.taglibs.standard.tag.rt.core.OutTag _jspx_th_c_out_5 = (org.apache.taglibs.standard.tag.rt.core.OutTag) _jspx_tagPool_c_out_value_nobody.get(org.apache.taglibs.standard.tag.rt.core.OutTag.class);
-    _jspx_th_c_out_5.setPageContext(_jspx_page_context);
-    _jspx_th_c_out_5.setParent((javax.servlet.jsp.tagext.Tag) _jspx_th_c_forEach_0);
-    _jspx_th_c_out_5.setValue((java.lang.Object) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${row.user}", java.lang.Object.class, (PageContext)_jspx_page_context, null));
-    int _jspx_eval_c_out_5 = _jspx_th_c_out_5.doStartTag();
-    if (_jspx_th_c_out_5.doEndTag() == javax.servlet.jsp.tagext.Tag.SKIP_PAGE) {
-      _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_5);
-      return true;
-    }
-    _jspx_tagPool_c_out_value_nobody.reuse(_jspx_th_c_out_5);
     return false;
   }
 }

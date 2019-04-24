@@ -473,27 +473,27 @@ img {
 <div class="topnav" id="myTopnav">
   <a href="AfterSignin.jsp">Home</a>
  <a href="cart.jsp">Cart</a>
-  <a href="contact.jsp">Contact</a>
-  <a href="#about">About</a>
 <a href="feedback.jsp">Feedback</a>
+<a href="index.html">Logout</a>
 </div>
         <form method="post">
         <div class="ex1">
             <style>
-th, td {
-  padding: 15px;
+td {
+  padding: 10px;
+  text-align: center;
 }
 </style>
 <center>
-            <table>
+    <table style="width:10%;">
                 <tr>
-                    <td align="center">
+                    <td><font color="#ff9d00" size="5px">Banana Chips(&#8377 299/kg)</font>
                         <img src="3.jpg" align="left" height="300px" width="400px" class="img-rounded"><br>
-                        <br><input formaction="deletedb.jsp" type="checkbox" name="c1" value="chp1"/>CHECK TO SELECT PRODUCT<br>
+                        <br><b><font color="#ef7c2f"><input formaction="deletedb.jsp" type="checkbox" name="c1" value="chp1"/>CHECK TO SELECT PRODUCT<br>
                         Enter Quantity in KGs(>10)<input type="text" name="qty"/>
                         <input formaction="productAction.jsp" type="submit" value="Add To Cart"/>
                         <input formaction="directbuy.jsp" type="submit" value="Buy Now"/>
-                        <font color="red">
+                        </font><font color="red">
         <c:if test="${not empty param.errMsg1}">
             <c:out value="${param.errMsg1}"/>
         </c:if>
@@ -503,11 +503,116 @@ th, td {
         <c:if test="${not empty param.errMsg3}">
             <c:out value="${param.errMsg3}"/>
         </c:if>
-                    </td>
+                        </font></b></td>
+                    <td><font color="#ff9d00" size="5px">Pepper Banana Chips(&#8377 349/kg)</font>
+                        <img src="6.jpg" align="left" height="300px" width="400px" class="img-rounded"><br>
+                        <br><b><font color="#ef7c2f"><input formaction="deletedb.jsp" type="checkbox" name="c2" value="chp2"/>CHECK TO SELECT PRODUCT<br>
+                        Enter Quantity in KGs(>10)<input type="text" name="qty2"/>
+                        <input formaction="productAction1.jsp" type="submit" value="Add To Cart"/>
+                        <input formaction="directbuy1.jsp" type="submit" value="Buy Now"/>
+                        </font><font color="red">
+        <c:if test="${not empty param.errMsg4}">
+            <c:out value="${param.errMsg4}"/>
+        </c:if>
+        <c:if test="${not empty param.errMsg5}">
+            <c:out value="${param.errMsg5}"/>
+        </c:if>
+        <c:if test="${not empty param.errMsg6}">
+            <c:out value="${param.errMsg6}"/>
+        </c:if>
+                        </font></b></td>
+                    <td><font color="#ff9d00" size="5px">Potato Chips(&#8377 249/kg)</font>
+                        <img src="7.jpg" align="left" height="300px" width="400px" class="img-rounded"><br>
+                        <br><b><font color="#ef7c2f"><input formaction="deletedb.jsp" type="checkbox" name="c3" value="chp3"/>CHECK TO SELECT PRODUCT<br>
+                        Enter Quantity in KGs(>10)<input type="text" name="qty3"/>
+                        <input formaction="productAction2.jsp" type="submit" value="Add To Cart"/>
+                        <input formaction="directbuy2.jsp" type="submit" value="Buy Now"/>
+                        </font><font color="red">
+        <c:if test="${not empty param.errMsg7}">
+            <c:out value="${param.errMsg7}"/>
+        </c:if>
+        <c:if test="${not empty param.errMsg8}">
+            <c:out value="${param.errMsg8}"/>
+        </c:if>
+        <c:if test="${not empty param.errMsg9}">
+            <c:out value="${param.errMsg9}"/>
+        </c:if>
+                        </font></b></td>
                 </tr>
+                <tr>
+                    <td><font color="#ff9d00" size="5px">Tomato Potato Chips(&#8377 299/kg)</font>
+                        <img src="8.jpg" align="left" height="300px" width="400px" class="img-rounded"><br>
+                        <br><b><font color="#ef7c2f"><input formaction="deletedb.jsp" type="checkbox" name="c4" value="chp4"/>CHECK TO SELECT PRODUCT<br>
+                        Enter Quantity in KGs(>10)<input type="text" name="qty4"/>
+                        <input formaction="productAction3.jsp" type="submit" value="Add To Cart"/>
+                        <input formaction="directbuy3.jsp" type="submit" value="Buy Now"/>
+                        </font><font color="red">
+        <c:if test="${not empty param.errMsg10}">
+            <c:out value="${param.errMsg10}"/>
+        </c:if>
+        <c:if test="${not empty param.errMsg11}">
+            <c:out value="${param.errMsg11}"/>
+        </c:if>
+        <c:if test="${not empty param.errMsg12}">
+            <c:out value="${param.errMsg12}"/>
+        </c:if>
+                        </font></b></td>
+                    <td><font color="#ff9d00" size="5px">Lasun Chivda(&#8377 275/kg)</font>
+                        <img src="9.jpeg" align="left" height="300px" width="400px" class="img-rounded"><br>
+                        <br><b><font color="#ef7c2f"><input formaction="deletedb.jsp" type="checkbox" name="c5" value="chp5"/>CHECK TO SELECT PRODUCT<br>
+                        Enter Quantity in KGs(>10)<input type="text" name="qty5"/>
+                        <input formaction="productAction4.jsp" type="submit" value="Add To Cart"/>
+                        <input formaction="directbuy4.jsp" type="submit" value="Buy Now"/>
+                        </font><font color="red">
+        <c:if test="${not empty param.errMsg13}">
+            <c:out value="${param.errMsg13}"/>
+        </c:if>
+        <c:if test="${not empty param.errMsg14}">
+            <c:out value="${param.errMsg14}"/>
+        </c:if>
+        <c:if test="${not empty param.errMsg15}">
+            <c:out value="${param.errMsg15}"/>
+        </c:if>
+                        </font></b></td>
+                    <td><font color="#ff9d00" size="5px">Chana Dal(&#8377 220/kg)</font>
+                        <img src="10.jpg" align="left" height="300px" width="400px" class="img-rounded"><br>
+                        <br><b><font color="#ef7c2f"><input formaction="deletedb.jsp" type="checkbox" name="c6" value="chp6"/>CHECK TO SELECT PRODUCT<br>
+                        Enter Quantity in KGs(>10)<input type="text" name="qty6"/>
+                        <input formaction="productAction5.jsp" type="submit" value="Add To Cart"/>
+                        <input formaction="directbuy5.jsp" type="submit" value="Buy Now"/>
+                        </font><font color="red">
+        <c:if test="${not empty param.errMsg16}">
+            <c:out value="${param.errMsg16}"/>
+        </c:if>
+        <c:if test="${not empty param.errMsg17}">
+            <c:out value="${param.errMsg17}"/>
+        </c:if>
+        <c:if test="${not empty param.errMsg18}">
+            <c:out value="${param.errMsg18}"/>
+        </c:if>
+                        </font></b></td>
+                </tr>
+                
             </table>
         </center>
         </div>
-        </form>
+        </form
+        <br><br>
+        <div class="container">
+            <div class="alert alert-info"><center>
+                    <strong>Info!</strong>  The Pictures Used Above Are Only For Advertisement Purpose. The Real Product May Differ</center>
+  </div>
+            <div class="panel panel-success">
+      <div class="panel-heading">Contact Us</div>
+      <div class="panel-body"><b><font color="#00cc99">Landline No: 022 XXXX XXXX<br>
+              Mobile No: +91 XXXXX XXXXX<br>
+          Email Address: gfp@gmail.com</b></div>
+    </div>
+  <div class="panel panel-warning">
+    <div class="panel-body"><center>
+            <b><font color="#ea9815">&copy; Vikas Pandey & Suraj Mishra</b>
+            </center></div>
+  </div>
+</div>
     </body>
 </html>

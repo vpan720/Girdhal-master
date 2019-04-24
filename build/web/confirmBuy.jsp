@@ -25,7 +25,10 @@
   padding-top: 100px;
 }
 
-
+.panel {
+    font-family: Verdana;
+    
+}
 
 body {margin:0;}
 
@@ -478,7 +481,13 @@ img {
  <a href="cart.jsp">Cart</a> 
 <a href="feedback.jsp">Feedback</a>
 <a href="index.html">Logout</a>
-</div>
+</div><div class="bg-image">
+        <img src="3.jpg" height="600px" width="1200px">
+</div><div class="bg-text">
+    <div class="jumbotron" width="100%">
+                                 <div class="well well-lg">
+                                     <form class="form-horizontal">
+    <div class="form-group">
         <script>
             function confirmGo(m,u)
             {
@@ -498,11 +507,11 @@ img {
             select * from newuser where mail='${param.mail}'
         </sql:query>
             <sql:update dataSource="${dbsource}">
-           update cart2 set mail=? where id='chp1';
+           update cart2 set mail=?;
            <sql:param value="${param.mail}"/>
             </sql:update>
-    <br><br><center>
-            <form>
+    <center>
+        <form><font color="black">
             <c:forEach var="row" items="${result.rows}">
                 <table border="0"><caption>User Details</caption>
                     <tr>
@@ -516,12 +525,20 @@ img {
                     <tr>
                         <td>Address:</td>
                         <td><c:out value="${row.addr}"/></td>
-                    </tr>
+                    </tr></font>
                     <tr>
                         <td colspan="2"><a href="javascript:confirmGo('Confirm','deletedb.jsp?id=<c:out value="${row.mail}"/>')">Confirm Order</a></td>
                     </tr>
                 </table></c:forEach>
             
-        </form></center>
+        </form>
+    </center></div>          
+                                     </form></div>
+          </div><div class="panel panel-warning">
+    <div class="panel-body"><center>
+            <b><font color="#ea9815">&copy; Vikas Pandey & Suraj Mishra</b>
+            </center></div>
+  </div>
+</div> </div>
     </body>
 </html>

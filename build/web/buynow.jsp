@@ -26,7 +26,10 @@
 }
 
 
-
+.panel {
+    font-family: Verdana;
+    
+}
 body {margin:0;}
 
 .navbar {
@@ -479,7 +482,13 @@ img {
 <a href="index.html">Logout</a>
 </div>
     </head>
-    <body>
+    <body><div class="bg-image">
+        <img src="3.jpg" height="600px" width="1200px">
+</div><div class="bg-text">
+    
+                                 <div class="well well-lg">
+                                     <form class="form-horizontal">
+    <div class="form-group">
         <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/girdhal"
                            user="root" password="vikas"/>
@@ -487,8 +496,8 @@ img {
             select * from cart2;
         </sql:query>
             <center>
-                <form method="post" action="confirmBuy.jsp">
-            <br><table border="1" width="40%">
+                <form method="post"><font color="black">
+            <table border="1" width="40%">
                 <caption>Content List</caption>
                 <tr>
                     <th>Product Name</th>
@@ -517,14 +526,22 @@ img {
                     </tr>
                 </c:forEach>
             </table>
+                <sql:update dataSource="${dbsource}">
+             delete from price;
+        </sql:update>
                 <br><br><font color="red"><b>Enter Email To Proceed:
                     <input type="email" class="form-control"  placeholder="Enter email" name="mail" required>
          
-         <input type="submit" value="PROCEED"/></b></font>
+         <input formaction="confirmBuy.jsp" type="submit" value="PROCEED"/></b></font>
        
         </form>
-             
-         
-    </center>
+    </center></div>          
+                                     </form></div>
+          <div class="panel panel-warning">
+    <div class="panel-body"><center>
+            <b><font color="#ea9815">&copy; Vikas Pandey & Suraj Mishra</b>
+            </center></div>
+  </div>
+</div> </div>
     </body>
 </html>

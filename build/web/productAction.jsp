@@ -29,14 +29,16 @@
                            user="root" password="vikas"/>
      
         <sql:update dataSource="${dbsource}" var="result">
-            insert into cart(id,qty,mail) values(?,?,?);
+            insert into cart(id,qty) values(?,?);
             <sql:param value="${param.c1}"/>
             <sql:param value="${param.qty}"/>
-            <sql:param value="${param.mail}"/>
         </sql:update>
             <c:if test="${result>=1}">
                 <sql:update dataSource="${dbsource}">
-                    insert into cart2 SELECT product.product_name, cart.qty, product.price_prkg, (cart.qty*product.price_prkg), cart.id, cart.mail from product inner join cart on product.id=cart.id;
+                    insert into cart2 SELECT product.product_name, cart.qty, product.price_prkg, (cart.qty*product.price_prkg), cart.id, cart.mail, cart.odrtime from product inner join cart on product.id=cart.id;
+                </sql:update>
+                <sql:update dataSource="${dbsource}">
+                    delete from cart;
                 </sql:update>
                 <c:redirect url="product.jsp"/>
             </c:if>

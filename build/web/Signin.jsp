@@ -312,7 +312,10 @@ float: left;
   color: white;
 }
 
-
+.panel {
+    font-family: Verdana;
+    
+}
 
 .content {
   margin-left: 75px;
@@ -338,8 +341,8 @@ float: left;
     
 
     <div class="bg-image">
-        <img src="3.jpg" height="100%" width="100%">
-    </div>
+        <img src="3.jpg" height="600px" width="1200px">
+</div>
     <div class="bg-text">
     
   
@@ -347,7 +350,7 @@ float: left;
 
                              <div class="jumbotron" width="100%">
                                  <div class="well well-lg">
-                                     <form class="form-horizontal" action="/action_page.php">
+                                     <form class="form-horizontal">
     <div class="form-group">
   
         <label class="control-label col-sm-4" for="email"><div class="dc">Enter Your Email:</div></label>
@@ -374,14 +377,18 @@ float: left;
             
         
                                  </div>          
-        </c:if>  </form></div>
+          </form></div>
         
     
         
        
     
 
-
+<div class="panel panel-warning">
+    <div class="panel-body"><center>
+            <b><font color="#ea9815">&copy; Vikas Pandey & Suraj Mishra</b>
+            </center></div>
+  </div>
 </div> 
 </body>
 </html>

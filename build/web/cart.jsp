@@ -461,6 +461,10 @@ float: left;
   width: 200px;
   height: 150px;  
 }
+.panel {
+    font-family: Verdana;
+    
+}
 img {
   border-radius: 50%;
 }
@@ -474,10 +478,16 @@ img {
 </div>
 <div class="topnav" id="myTopnav">
   <a href="AfterSignin.jsp">Home</a>
-  <a href="product.jsp">Chips</a>
+  <a href="product.jsp">Chips & Namkeen</a>
 <a href="feedback.jsp">Feedback</a>
 <a href="index.html">Logout</a>
-</div>
+</div><div class="bg-image">
+        <img src="3.jpg" height="600px" width="1200px">
+</div><div class="bg-text">
+    
+                                 <div class="well well-lg">
+                                     <form class="form-horizontal">
+    <div class="form-group">
         <script>
             function confirmGo(m,u)
             {
@@ -496,8 +506,8 @@ img {
             select * from cart2;
         </sql:query>
     <center>
-        <form>
-            <br><table border="1" width="40%">
+        <form><font color="black">
+            <table border="1" width="40%">
                 <caption>Content List</caption>
                 <tr>
                     <th>Product ID</th>
@@ -521,8 +531,14 @@ img {
         </form><br><br>
         <form action="buynow.jsp" method="post">
             <b><input type="submit" value="PROCEED"/></b>
-    </form>
-    </center>   
-    
+   </form>
+    </center></div>          
+                                     </form></div>
+          <div class="panel panel-warning">
+    <div class="panel-body"><center>
+            <b><font color="#ea9815">&copy; Vikas Pandey & Suraj Mishra</b>
+            </center></div>
+  </div>
+</div> </div>
     </body>
 </html>

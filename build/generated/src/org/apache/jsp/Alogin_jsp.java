@@ -42,8 +42,6 @@ public final class Alogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       _jspx_resourceInjector = (org.glassfish.jsp.api.ResourceInjector) application.getAttribute("com.sun.appserv.jsp.resource.injector");
 
       out.write("\n");
-      out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
@@ -375,19 +373,17 @@ public final class Alogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("</div>\n");
       out.write("<div class=\"topnav\" id=\"myTopnav\">\n");
       out.write("  <a href=\"index.html\">Home</a>\n");
-      out.write("      <a href=\"signup.html\">Sign Up</a>\n");
-      out.write("      <a href=\"Signin.jsp\">Customer Login</a>\n");
-      out.write("  <a href=\"#contact\">Contact</a>\n");
-      out.write("  <a href=\"#about\">About</a>\n");
-      out.write("<a href=\"#feedback\">Feedback</a>\n");
+      out.write("  <a href=\"signup.html\">Sign Up</a>\n");
+      out.write("  <a href=\"Signin.jsp\">Customer Login</a>\n");
+      out.write("  \n");
       out.write("</div>\n");
       out.write("        \n");
       out.write("    \n");
       out.write("    \n");
       out.write("\n");
       out.write("    <div class=\"bg-image\">\n");
-      out.write("        <img src=\"3.jpg\" height=\"100%\" width=\"100%\">\n");
-      out.write("    </div>\n");
+      out.write("        <img src=\"3.jpg\" height=\"600px\" width=\"1200px\">\n");
+      out.write("</div>\n");
       out.write("    <div class=\"bg-text\">\n");
       out.write("    \n");
       out.write("  \n");
@@ -433,7 +429,11 @@ public final class Alogin_jsp extends org.apache.jasper.runtime.HttpJspBase
       out.write("       \n");
       out.write("    \n");
       out.write("\n");
-      out.write("\n");
+      out.write("<div class=\"panel panel-warning\">\n");
+      out.write("    <div class=\"panel-body\"><center>\n");
+      out.write("            <b><font color=\"#ea9815\">&copy; Vikas Pandey & Suraj Mishra</b>\n");
+      out.write("            </center></div>\n");
+      out.write("  </div>\n");
       out.write("</div> \n");
       out.write("</body>\n");
       out.write("</html>");

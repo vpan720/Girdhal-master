@@ -21,6 +21,10 @@ body {margin:0;}
   top: 0;
   width: 100%;
 }
+.panel {
+    font-family: Verdana;
+    
+}
 .navbar a {
   float: left;
   display: block;
@@ -445,7 +449,7 @@ float: left;
 </div>
 <div class="topnav" id="myTopnav">
   <a href="AfterSignin.jsp">Home</a>
-  <a href="product.jsp">Chips</a>
+  <a href="product.jsp">Chips & Namkeen</a>
   <a href="cart.jsp">Cart</a>
   <a href="index.html">Logout</a>
   
@@ -453,8 +457,8 @@ float: left;
 
         
     <div class="bg-image">
-        <img src="3.jpg" height="100%" width="100%">
-    </div>
+        <img src="3.jpg" height="600px" width="1200px">
+</div>
     <div class="bg-text">
    
     
@@ -489,7 +493,11 @@ float: left;
                                 
          <input type="submit" value='Submit' class="btn btn-warning"></div></div>
                              
-                             </div> </form> </div>   
+                             </div> </form><div class="panel panel-warning">
+    <div class="panel-body"><center>
+            <b><font color="#ea9815">&copy; Vikas Pandey & Suraj Mishra</b>
+            </center></div>
+  </div> </div>   
 
         
     </body>

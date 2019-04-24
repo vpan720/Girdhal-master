@@ -461,6 +461,10 @@ float: left;
   width: 200px;
   height: 150px;  
 }
+.panel {
+    font-family: Verdana;
+    
+}
 img {
   border-radius: 50%;
 }
@@ -476,7 +480,13 @@ img {
   <a href="AfterASignin.jsp">Orders</a>
   <a href="userdetails.jsp">User Details</a>
   <a href="index.html">Logout</a>
-</div></head>
+</div><div class="bg-image">
+        <img src="3.jpg" height="600px" width="1200px">
+</div><div class="bg-text">
+    
+                                 <div class="well well-lg">
+                                     <form class="form-horizontal" action="/action_page.php">
+    <div class="form-group"></head>
     <body>
         <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/girdhal"
@@ -489,10 +499,10 @@ th, td {
   padding: 5px;
   text-align: center;
 }
-            </style><br>
+            </style>
     <center>
         <form>
-            <br><table border="1" width="40%">
+            <font color="black"><table border="1" width="40%">
                 <caption>Customer Feedbacks</caption>
                 <tr>
                     <th>Email Address</th>
@@ -508,6 +518,13 @@ th, td {
                 </c:forEach>
             </table>
     </form>
-    </center>   
+    </center></div>          
+                                     </form></div>
+          <div class="panel panel-warning">
+    <div class="panel-body"><center>
+            <b><font color="#ea9815">&copy; Vikas Pandey & Suraj Mishra</b>
+            </center></div>
+  </div>
+</div> </div>
     </body>
 </html>

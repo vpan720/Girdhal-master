@@ -464,6 +464,10 @@ float: left;
 img {
   border-radius: 50%;
 }
+.panel {
+    font-family: Verdana;
+    
+}
   </style>
     </head>
     <body>
@@ -476,7 +480,7 @@ img {
   <a href="userdetails.jsp">User Details</a>
   <a href="fddisplay.jsp">Feedbacks</a>
   <a href="index.html">Logout</a>
-</div>
+</div><br>
         <script>
             function confirmGo(m,u)
             {
@@ -492,33 +496,43 @@ img {
                            url="jdbc:mysql://localhost:3306/girdhal"
                            user="root" password="vikas"/>
         <sql:query dataSource="${dbsource}" var="result">
-            select * from pendingorders;
+            select * from pendingorders2;
         </sql:query>
             <style>
 th, td {
   padding: 5px;
   text-align: center;
 }
-            </style><br>
-    <center>
+            </style>
+    <center><font color="black">
         <form method="post">
-            <br><table border="1" width="40%">
+            <table border="1" width="40%">
                 <caption>Orders</caption>
                 <tr>
                     <th>User</th>
                     <th>Product Name</th>
                     <th>Quantity</th>
                     <th>Amount</th>
+                    <th>Date and Time</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                     <tr>
                         <td><c:out value="${row.user}"/></td>
                         <td><c:out value="${row.products}"/></td>
                         <td><c:out value="${row.quantities}"/></td>
-                        <td><c:out value="${row.amount}"/></td></tr>
+                        <td><c:out value="${row.amount}"/></td>
+                        <td><c:out value="${row.odrtime}"/></td>
+                    </tr>
                 </c:forEach>
             </table>
     </form>
-    </center>   
+    </center><br><br><br>
+    <div class="container">
+          <div class="panel panel-warning">
+    <div class="panel-body"><center>
+            <b><font color="#ea9815">&copy; Vikas Pandey & Suraj Mishra</b>
+            </center></div>
+          </div></div>
+
     </body>
 </html>
