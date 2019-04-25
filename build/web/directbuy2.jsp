@@ -454,6 +454,10 @@ float: left;
 .bg-text{
      margin-bottom: 0; 
 }
+.panel {
+    font-family: Verdana;
+    
+}
 #rcorners2 {
   border-radius: 25px;
   border: 2px solid #73AD21;
@@ -480,7 +484,7 @@ img {
 <a href="index.html">Logout</a>
 </div>
     </head>
-    <body>
+    
         <sql:setDataSource var="dbsource" driver="com.mysql.jdbc.Driver"
                            url="jdbc:mysql://localhost:3306/girdhal"
                            user="root" password="vikas"/>
@@ -514,7 +518,7 @@ img {
         </sql:query>
             <center>
                 <form method="post" action="confirmBuy.jsp">
-            <br><table border="1" width="40%">
+            <font color="black"><br><table border="1" width="40%">
                 <caption>Content List</caption>
                 <tr>
                     <th>Product Name</th>
@@ -542,12 +546,19 @@ img {
                         <td colspan="2" align="center"><b><c:out value="${row.finalprice}"/></b></td>
                     </tr>
                 </c:forEach>
-            </table>
+            </table><sql:update dataSource="${dbsource}">
+             delete from price;
+        </sql:update>
                 <br><br><font color="red"><b>Enter Email To Proceed:
          <input type="email" class="form-control"  placeholder="Enter email" name="mail">
          
          <input type="submit" value="PROCEED"/></b></font>
                 </form>
-    </center>
+    </center><br><br><br>
+          <div class="panel panel-warning">
+    <div class="panel-body"><center>
+            <b><font color="#ea9815">&copy; Vikas Pandey & Suraj Mishra</b>
+            </center></div>
+  </div>
     </body>
 </html>
