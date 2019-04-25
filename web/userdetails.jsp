@@ -478,6 +478,7 @@ img {
 </div>
 <div class="topnav" id="myTopnav">
   <a href="AfterASignin.jsp">Orders</a>
+  <a href="dlvrddsply.jsp">Delivered Orders</a>
   <a href="fddisplay.jsp">Feedbacks</a>
   <a href="index.html">Logout</a>
 </div><div class="bg-image">

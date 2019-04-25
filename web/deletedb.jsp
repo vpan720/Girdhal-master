@@ -289,7 +289,7 @@ float: left;
             <sql:param value="<%=nowtime%>"/>
         </sql:update>
         <sql:update dataSource="${dbsource}">
-            insert into pendingorders2 select pendingorders.user,pendingorders.products,pendingorders.quantities,pendingorders.amount,pendingorders.odrtime from pendingorders;
+            insert into pendingorders2(user,products,quantities,amount,odrtime) select pendingorders.user,pendingorders.products,pendingorders.quantities,pendingorders.amount,pendingorders.odrtime from pendingorders;
         </sql:update>    
         <sql:update dataSource="${dbsource}">
             delete from pendingorders;

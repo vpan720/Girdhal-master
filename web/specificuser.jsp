@@ -16,7 +16,10 @@
       .product{
          height: 10px;
          width:10px;
-          
+          .panel {
+    font-family: Verdana;
+    
+}
       }
       .form-group{
    margin-bottom: 0; 
@@ -475,6 +478,8 @@ img {
 <div class="topnav" id="myTopnav">
   <a href="AfterASignin.jsp">Orders</a>
   <a href="dlvrddsply.jsp">Delivered Orders</a>
+  <a href="userdetails.jsp">User Details</a>
+  <a href="fddisplay.jsp">Feedbacks</a>
   <a href="index.html">Logout</a>
 </div>
         <script>
@@ -493,7 +498,7 @@ img {
                            user="root" password="vikas"/>
         <sql:query dataSource="${dbsource}" var="result">
             select * from newuser
-            where mail='${param.user}'
+            where mail='${param.id}'
         </sql:query>
             <style>
 th, td {
@@ -521,6 +526,13 @@ th, td {
                 </c:forEach>
             </table>
     </form>
-    </center>   
+    </center><br><br><br>
+    <div class="container">
+          <div class="panel panel-warning">
+    <div class="panel-body"><center>
+            <b><font color="#ea9815">&copy; Vikas Pandey & Suraj Mishra</b>
+            </center></div>
+          </div></div>
+
     </body>
 </html>

@@ -477,6 +477,7 @@ img {
   <a href="index.html"> <img src="L.jpg" height=7% width=9%></a>
 </div>
 <div class="topnav" id="myTopnav">
+  <a href="dlvrddsply.jsp">Delivered Orders</a>
   <a href="userdetails.jsp">User Details</a>
   <a href="fddisplay.jsp">Feedbacks</a>
   <a href="index.html">Logout</a>
@@ -513,7 +514,9 @@ th, td {
                     <th>Product Name</th>
                     <th>Quantity</th>
                     <th>Amount</th>
-                    <th>Date and Time</th>
+                    <th>Date and Time of Order</th>
+                    <th>Order No</th>
+                    <th colspan="2">Actions</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                     <tr>
@@ -522,6 +525,9 @@ th, td {
                         <td><c:out value="${row.quantities}"/></td>
                         <td><c:out value="${row.amount}"/></td>
                         <td><c:out value="${row.odrtime}"/></td>
+                        <td><c:out value="${row.odrno}"/></td>
+                        <td><a href="javascript:confirmGo('Sure to Mark this Record as Delivered?','odrdelete.jsp?id=<c:out value="${row.odrno}"/>')">Mark as Delivered</a></td>
+                        <td><a href="javascript:confirmGo('Retrieve Details of the User?','specificuser.jsp?id=<c:out value="${row.user}"/>')">Get Users Details</a></td>
                     </tr>
                 </c:forEach>
             </table>

@@ -16,7 +16,10 @@
       .product{
          height: 10px;
          width:10px;
-          
+         .panel {
+    font-family: Verdana;
+    
+} 
       }
       .form-group{
    margin-bottom: 0; 
@@ -475,6 +478,7 @@ img {
 <div class="topnav" id="myTopnav">
   <a href="AfterASignin.jsp">Orders</a>
   <a href="userdetails.jsp">User Details</a>
+  <a href="fddisplay.jsp">Feedbacks</a>
   <a href="index.html">Logout</a>
 </div>
         <script>
@@ -509,16 +513,29 @@ th, td {
                     <th>Product Name</th>
                     <th>Quantity</th>
                     <th>Amount</th>
+                    <th>Date and Time of Order</th>
+                    <th>Order No</th>
+                    <th>Actions</th>
                 </tr>
                 <c:forEach var="row" items="${result.rows}">
                     <tr>
                         <td><c:out value="${row.user}"/></td>
                         <td><c:out value="${row.products}"/></td>
                         <td><c:out value="${row.quantities}"/></td>
-                        <td><c:out value="${row.amount}"/></td></tr>
-                </c:forEach>
+                        <td><c:out value="${row.amount}"/></td>
+                        <td><c:out value="${row.odrtime}"/></td>
+                        <td><c:out value="${row.odrno}"/></td>
+                        <td><a href="javascript:confirmGo('Sure to Delete this Record?','dlvrddlt.jsp?id=<c:out value="${row.odrno}"/>')">Delete</a></td>
+                    </tr></c:forEach>
             </table>
     </form>
-    </center>   
+    </center><br><br><br>
+    <div class="container">
+          <div class="panel panel-warning">
+    <div class="panel-body"><center>
+            <b><font color="#ea9815">&copy; Vikas Pandey & Suraj Mishra</b>
+            </center></div>
+          </div></div>
+
     </body>
 </html>
