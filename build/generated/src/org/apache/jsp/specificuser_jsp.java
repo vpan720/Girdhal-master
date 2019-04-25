@@ -67,12 +67,11 @@ public final class specificuser_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("\n");
       out.write("\n");
-      out.write("\n");
       out.write("<!DOCTYPE html>\n");
       out.write("<html>\n");
       out.write("    <head>\n");
       out.write("        <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n");
-      out.write("        <title>Pending Orders</title>\n");
+      out.write("        <title>GFP</title>\n");
       out.write("        <link rel=\"icon\" href=\"L2.png\">\n");
       out.write("          <link rel=\"stylesheet\" href=\"main.css\">\n");
       out.write("        <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css\">\n");
@@ -82,7 +81,10 @@ public final class specificuser_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("      .product{\n");
       out.write("         height: 10px;\n");
       out.write("         width:10px;\n");
-      out.write("          \n");
+      out.write("          .panel {\n");
+      out.write("    font-family: Verdana;\n");
+      out.write("    \n");
+      out.write("}\n");
       out.write("      }\n");
       out.write("      .form-group{\n");
       out.write("   margin-bottom: 0; \n");
@@ -541,6 +543,8 @@ public final class specificuser_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("<div class=\"topnav\" id=\"myTopnav\">\n");
       out.write("  <a href=\"AfterASignin.jsp\">Orders</a>\n");
       out.write("  <a href=\"dlvrddsply.jsp\">Delivered Orders</a>\n");
+      out.write("  <a href=\"userdetails.jsp\">User Details</a>\n");
+      out.write("  <a href=\"fddisplay.jsp\">Feedbacks</a>\n");
       out.write("  <a href=\"index.html\">Logout</a>\n");
       out.write("</div>\n");
       out.write("        <script>\n");
@@ -584,7 +588,14 @@ public final class specificuser_jsp extends org.apache.jasper.runtime.HttpJspBas
       out.write("\n");
       out.write("            </table>\n");
       out.write("    </form>\n");
-      out.write("    </center>   \n");
+      out.write("    </center><br><br><br>\n");
+      out.write("    <div class=\"container\">\n");
+      out.write("          <div class=\"panel panel-warning\">\n");
+      out.write("    <div class=\"panel-body\"><center>\n");
+      out.write("            <b><font color=\"#ea9815\">&copy; Vikas Pandey & Suraj Mishra</b>\n");
+      out.write("            </center></div>\n");
+      out.write("          </div></div>\n");
+      out.write("\n");
       out.write("    </body>\n");
       out.write("</html>");
     } catch (Throwable t) {
@@ -644,7 +655,10 @@ public final class specificuser_jsp extends org.apache.jasper.runtime.HttpJspBas
         }
         do {
           out.write("\n");
-          out.write("            select * from newuser where mail='vpan720@gmail.com';\n");
+          out.write("            select * from newuser\n");
+          out.write("            where mail='");
+          out.write((java.lang.String) org.apache.jasper.runtime.PageContextImpl.evaluateExpression("${param.id}", java.lang.String.class, (PageContext)_jspx_page_context, null));
+          out.write("'\n");
           out.write("        ");
           int evalDoAfterBody = _jspx_th_sql_query_0.doAfterBody();
           if (evalDoAfterBody != javax.servlet.jsp.tagext.BodyTag.EVAL_BODY_AGAIN)
